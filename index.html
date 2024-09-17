@@ -58,7 +58,8 @@
         addButton.style.height = '60px';
         addButton.style.width = '120px';
         // addButton.style.marginLeft = '10px';
-        addButton.style.fontSize = '30px';
+        addButton.style.fontSize = '20px';
+        addButton.style.fontWeight = 'bolder';
         addButton.style.borderRadius = '10px';
 
         addButton.addEventListener('click', () => {
@@ -135,7 +136,7 @@
         listResetButton.style.width = '200px';
         // listResetButton.style.marginLeft = '10px';
         listResetButton.style.fontSize = '20px';
-        listResetButton.style.fontWeight = 'bold';
+        listResetButton.style.fontWeight = 'bolder';
         listResetButton.style.borderRadius = '10px';
         listResetButton.addEventListener('click', () => {
           memberList = [];
@@ -151,6 +152,9 @@
 
         const buttonForDice = document.querySelector('button#buttonForDice');
         const diceImg = document.querySelector('img#dice');
+        diceImg.setAttribute('src', 'dice.png');
+        buttonForDice.style.verticalAlign = 'middle';
+        buttonForDice.style.textAlign = 'center';
         buttonForDice.style.height = '100px';
         buttonForDice.style.width = '100px';
         buttonForDice.style.marginTop = '25px';
@@ -158,8 +162,6 @@
         buttonForDice.style.borderRadius = '10px';
         diceImg.style.height = '90px';
         diceImg.style.width = '90px';
-        buttonForDice.style.textAlign = 'center';
-        diceImg.setAttribute('src', 'dice.png');
 
         let h1Result = [];
 
