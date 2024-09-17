@@ -52,9 +52,9 @@
         };
 
         const addButton = document.querySelector('button#add');
-        addButton.style.verticalAlign = 'middle';
-        addButton.style.fontColor = 'black';
-        addButton.style.textAlign = 'center';
+        // addButton.style.verticalAlign = 'middle';
+        // addButton.style.fontColor = 'white';
+        // addButton.style.textAlign = 'center';
         addButton.style.height = '56px';
         addButton.style.width = '100px';
         addButton.style.marginLeft = '10px';
@@ -88,9 +88,9 @@
         });
 
         const deleteButton = document.querySelector('button#delete');
-        deleteButton.style.verticalAlign = 'middle';
-        deleteButton.style.fontColor = 'black';
-        deleteButton.style.textAlign = 'center';
+        // deleteButton.style.verticalAlign = 'middle';
+        // deleteButton.style.fontColor = 'black';
+        // deleteButton.style.textAlign = 'center';
         deleteButton.style.height = '56px';
         deleteButton.style.width = '100px';
         deleteButton.style.marginLeft = '10px';
@@ -128,9 +128,9 @@
         });
 
         const listResetButton = document.querySelector('button#listReset');
-        listResetButton.style.verticalAlign = 'middle';
-        listResetButton.style.fontColor = 'black';
-        listResetButton.style.textAlign = 'center';
+        // listResetButton.style.verticalAlign = 'middle';
+        // listResetButton.style.fontColor = 'black';
+        // listResetButton.style.textAlign = 'center';
         listResetButton.style.height = '56px';
         listResetButton.style.width = '150px';
         listResetButton.style.marginLeft = '10px';
@@ -196,18 +196,20 @@
             for (let i = 0; i < finalList.length; i++) {
               setTimeout(() => {
                 h1Result[i] = document.createElement('h1');
-                h1Result[i].textContent = `${(i + 1) % 10}. ${finalList[i]}`;
+                h1Result[i].textContent = `${(i + 1) % 10}.   ${finalList[i]}`;
                 h1Result[i].style.display = 'inline-block';
                 h1Result[i].style.backgroundColor = 'rgba(245,255,250,0.8)';
                 h1Result[i].style.paddingTop = '10px';
                 h1Result[i].style.paddingBottom = '10px';
-                h1Result[i].style.paddingLeft = '30px';
+                // h1Result[i].style.paddingLeft = '30px';
+                h1Result[i].style.paddingLeft = '10px';
                 h1Result[i].style.paddingRight = '10px';
                 h1Result[i].style.marginTop = '0px';
                 h1Result[i].style.marginBottom = '10px';
                 h1Result[i].style.borderRadius = '10px';
                 h1Result[i].style.width = '180px';
-                h1Result[i].style.textAlign = 'start';
+                // h1Result[i].style.textAlign = 'start';
+                h1Result[i].style.textAlign = 'center';
                 const br = document.createElement('br');
                 divForResult.appendChild(h1Result[i]);
                 divForResult.appendChild(br);
@@ -217,8 +219,8 @@
         });
 
         const resetButton = document.querySelector('button#reset');
-        resetButton.style.fontColor = 'black';
-        resetButton.style.textAlign = 'center';
+        // resetButton.style.fontColor = 'black';
+        // resetButton.style.textAlign = 'center';
         resetButton.style.height = '60px';
         resetButton.style.width = '150px';
         resetButton.style.fontSize = '30px';
