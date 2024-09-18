@@ -121,16 +121,19 @@
             if (memberList.length > 0) {
               if (confirm('마지막 멤버를 삭제하시겠습니까?')) {
                 memberList.pop();
-                h2Members.textContent = `Today's Members  :  ${memberList[0]}`;
+                if (memberList.length === 0) {
+                  h2Members.textContent = `Today's Members  :  `;
+                } else {
+                  h2Members.textContent = `Today's Members  :  ${memberList[0]}`;
 
-                let str = '';
+                  let str = '';
 
-                for (let i = 1; i < memberList.length; i++) {
-                  str += `, ${memberList[i]}`;
+                  for (let i = 1; i < memberList.length; i++) {
+                    str += `, ${memberList[i]}`;
+                  }
+
+                  h2Members.textContent += str;
                 }
-
-                h2Members.textContent += str;
-
                 h2Style();
               }
             } else {
