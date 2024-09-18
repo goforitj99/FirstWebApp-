@@ -124,25 +124,28 @@
               input.value = '';
             }
           } else {
-            memberList.pop();
             if (memberList.length > 0) {
-              h2Members.textContent = `Today's Members  :  ${memberList[0]}`;
+              memberList.pop();
+              if (memberList.length > 0) {
+                h2Members.textContent = `Today's Members  :  ${memberList[0]}`;
 
-              let str = '';
+                let str = '';
 
-              for (let i = 1; i < memberList.length; i++) {
-                str += `, ${memberList[i]}`;
+                for (let i = 1; i < memberList.length; i++) {
+                  str += `, ${memberList[i]}`;
+                }
+
+                h2Members.textContent += str;
+
+                h2Style();
+              } else {
+                h2Members.textContent = `Today's Members  :  `;
+
+                h2Style();
               }
-
-              h2Members.textContent += str;
-
-              h2Style();
             } else {
-              h2Members.textContent = `Today's Members  :  `;
-
-              h2Style();
+              alert(`Today's Members 리스트가 비어있습니다.`);
             }
-            // alert('값을 입력하세요!');
           }
         });
 
