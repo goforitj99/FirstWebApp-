@@ -53,11 +53,8 @@
 
         const addButton = document.querySelector('button#add');
         addButton.style.verticalAlign = 'middle';
-        // addButton.style.fontColor = 'white';
-        // addButton.style.textAlign = 'center';
         addButton.style.height = '60px';
         addButton.style.width = '120px';
-        // addButton.style.marginLeft = '10px';
         addButton.style.fontSize = '20px';
         addButton.style.fontWeight = 'bolder';
         addButton.style.borderRadius = '10px';
@@ -90,11 +87,8 @@
 
         const deleteButton = document.querySelector('button#delete');
         deleteButton.style.verticalAlign = 'middle';
-        // deleteButton.style.fontColor = 'black';
-        // deleteButton.style.textAlign = 'center';
         deleteButton.style.height = '60px';
         deleteButton.style.width = '120px';
-        // deleteButton.style.marginLeft = '10px';
         deleteButton.style.fontSize = '20px';
         deleteButton.style.fontWeight = 'bolder';
         deleteButton.style.borderRadius = '10px';
@@ -125,8 +119,8 @@
             }
           } else {
             if (memberList.length > 0) {
-              memberList.pop();
-              if (memberList.length > 0) {
+              if (confirm('마지막 멤버를 삭제하시겠습니까?')) {
+                memberList.pop();
                 h2Members.textContent = `Today's Members  :  ${memberList[0]}`;
 
                 let str = '';
@@ -138,10 +132,6 @@
                 h2Members.textContent += str;
 
                 h2Style();
-              } else {
-                h2Members.textContent = `Today's Members  :  `;
-
-                h2Style();
               }
             } else {
               alert(`Today's Members 리스트가 비어있습니다.`);
@@ -151,11 +141,8 @@
 
         const listResetButton = document.querySelector('button#listReset');
         listResetButton.style.verticalAlign = 'middle';
-        // listResetButton.style.fontColor = 'black';
-        // listResetButton.style.textAlign = 'center';
         listResetButton.style.height = '60px';
         listResetButton.style.width = '200px';
-        // listResetButton.style.marginLeft = '10px';
         listResetButton.style.fontSize = '20px';
         listResetButton.style.fontWeight = 'bolder';
         listResetButton.style.borderRadius = '10px';
@@ -172,8 +159,6 @@
         const divForResult = document.querySelector('div#result');
 
         const buttonForDice = document.querySelector('button#buttonForDice');
-        // const diceImg = document.querySelector('img#dice');
-        // diceImg.setAttribute('src', 'dice.png');
 
         buttonForDice.style.backgroundImage = "url('dice.png')";
         buttonForDice.style.backgroundPosition = 'center';
@@ -184,17 +169,6 @@
         buttonForDice.style.marginTop = '25px';
         buttonForDice.style.marginBottom = '30px';
         buttonForDice.style.borderRadius = '10px';
-
-        // buttonForDice.style.verticalAlign = 'middle';
-        // buttonForDice.style.textAlign = 'center';
-
-        // buttonForDice.style.padding = '10px';
-
-        // diceImg.style.height = '90px';
-        // diceImg.style.width = '90px';
-
-        // diceImg.style.paddingRight = '150px';
-        // diceImg.style.paddingTop = '50px';
 
         let h1Result = [];
 
@@ -236,14 +210,12 @@
                 h1Result[i].style.backgroundColor = 'rgba(245,255,250,0.8)';
                 h1Result[i].style.paddingTop = '10px';
                 h1Result[i].style.paddingBottom = '10px';
-                // h1Result[i].style.paddingLeft = '30px';
                 h1Result[i].style.paddingLeft = '10px';
                 h1Result[i].style.paddingRight = '10px';
                 h1Result[i].style.marginTop = '0px';
                 h1Result[i].style.marginBottom = '10px';
                 h1Result[i].style.borderRadius = '10px';
                 h1Result[i].style.width = '180px';
-                // h1Result[i].style.textAlign = 'start';
                 h1Result[i].style.textAlign = 'center';
                 const br = document.createElement('br');
                 divForResult.appendChild(h1Result[i]);
@@ -254,8 +226,6 @@
         });
 
         const resetButton = document.querySelector('button#reset');
-        // resetButton.style.fontColor = 'black';
-        // resetButton.style.textAlign = 'center';
         resetButton.style.height = '60px';
         resetButton.style.width = '150px';
         resetButton.style.fontSize = '30px';
@@ -285,9 +255,7 @@
       <h2 id="members"></h2>
     </div>
 
-    <button id="buttonForDice">
-      <!-- <img id="dice" src="" alt="" /> -->
-    </button>
+    <button id="buttonForDice"></button>
 
     <div id="result"></div>
 
