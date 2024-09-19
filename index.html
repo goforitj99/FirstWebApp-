@@ -18,6 +18,8 @@
 
         let memberList = [];
 
+        let checkingList = [];
+
         const head = document.querySelector('div#head');
 
         head.style.height = '60px';
@@ -176,7 +178,6 @@
         let h1Result = [];
 
         let finalList = [];
-        let randomArr = [];
 
         let handlerForDice = 0;
 
@@ -185,21 +186,24 @@
             while (true) {
               const randomNum = Math.floor(Math.random() * memberList.length);
 
-              if (randomArr.length === 0) {
-                randomArr[0] = memberList[randomNum];
-              } else {
-                if (randomArr.indexOf(memberList[randomNum]) < 0) {
-                  randomArr.push(memberList[randomNum]);
+              // 완벽하진 않지만 이정도로..?
+              if (checkingList.length >= memberList.length) {
+                checkingList = [];
+              }
+
+              if (finalList.length === 0) {
+                if (checkingList.indexOf(memberList[randomNum]) < 0) {
+                  finalList[0] = memberList[randomNum];
+                  checkingList.push(finalList[0]);
+                  console.log(checkingList);
                 }
+              } else if (finalList.indexOf(memberList[randomNum]) < 0) {
+                finalList.push(memberList[randomNum]);
               }
 
-              if (randomArr.length === memberList.length) {
-                finalList = finalList.concat(randomArr);
-                randomArr = [];
-              }
+              console.log();
 
-              if (finalList.length >= 10) {
-                finalList = finalList.slice(0, 10);
+              if (finalList.length >= memberList.length) {
                 handlerForDice = 1;
                 break;
               }
@@ -208,7 +212,7 @@
             for (let i = 0; i < finalList.length; i++) {
               setTimeout(() => {
                 h1Result[i] = document.createElement('h1');
-                h1Result[i].textContent = `${(i + 1) % 10}.   ${finalList[i]}`;
+                h1Result[i].textContent = `${i + 1}.   ${finalList[i]}`;
                 h1Result[i].style.display = 'inline-block';
                 h1Result[i].style.backgroundColor = 'rgba(245,255,250,0.8)';
                 h1Result[i].style.paddingTop = '10px';
@@ -223,8 +227,14 @@
                 const br = document.createElement('br');
                 divForResult.appendChild(h1Result[i]);
                 divForResult.appendChild(br);
-              }, (i + 1) * 495);
+              }, (i + 1) * 456);
             }
+          } else {
+            alert(`순서를 초기화하거나 멤버를 3명 이상 입력하세요.`);
+          }
+
+          if (checkingList.length >= memberList.length) {
+            checkingList = [];
           }
         });
 
