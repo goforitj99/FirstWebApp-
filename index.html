@@ -195,13 +195,10 @@
                 if (checkingList.indexOf(memberList[randomNum]) < 0) {
                   finalList[0] = memberList[randomNum];
                   checkingList.push(finalList[0]);
-                  console.log(checkingList);
                 }
               } else if (finalList.indexOf(memberList[randomNum]) < 0) {
                 finalList.push(memberList[randomNum]);
               }
-
-              console.log();
 
               if (finalList.length >= memberList.length) {
                 handlerForDice = 1;
