@@ -60,6 +60,7 @@
         addButton.style.fontSize = '20px';
         addButton.style.fontWeight = 'bolder';
         addButton.style.borderRadius = '10px';
+        addButton.style.color = 'black'; // X
 
         addButton.addEventListener('click', () => {
           if (input.value !== '') {
@@ -94,6 +95,8 @@
         deleteButton.style.fontSize = '20px';
         deleteButton.style.fontWeight = 'bolder';
         deleteButton.style.borderRadius = '10px';
+        deleteButton.style.color = 'black'; // X
+
         deleteButton.addEventListener('click', () => {
           if (input.value !== '') {
             if (memberList.indexOf(`${input.value}`) < 0) {
@@ -151,6 +154,8 @@
         listResetButton.style.fontSize = '20px';
         listResetButton.style.fontWeight = 'bolder';
         listResetButton.style.borderRadius = '10px';
+        listResetButton.style.color = 'black'; // X
+
         listResetButton.addEventListener('click', () => {
           memberList = [];
           h2Members.textContent = `Today's Members  :  `;
@@ -241,6 +246,8 @@
         resetButton.style.fontSize = '30px';
         resetButton.style.fontWeight = 'bolder';
         resetButton.style.borderRadius = '10px';
+        resetButton.style.color = 'black'; // X
+
         resetButton.addEventListener('click', () => {
           for (let i = 0; i < 10; i++) {
             divForResult.textContent = '';
